@@ -1,0 +1,1 @@
+document.getElementById('paper').innerHTML = 'Hello JavaScript';

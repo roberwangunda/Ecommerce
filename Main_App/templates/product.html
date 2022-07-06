@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<h3 class="title-commercial">ALL PRODUCT CATEGORIES</h3>
+<hr class="new1">
+<section class="products">
+    <div class="product-card">
+        {% for rs in products %}
+        <div class="product-info">
+            <a class="image-boundary" href="{% url 'productDetail' rs.id rs.slug %}"><img src="{{ rs.imageURL }}"></a>
+            <h1>{{ rs.name }}</h1>
+            <p class="price">$ {{rs.price }}</p>
+            <p>{{ rs.label }}</p>
+            <button data-product="{{ rs.id }}" data-action="add" class="button add-btn update-cart">Add toCart</button>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<h3 class="title-room">PASTRY AND BAKING</h3>
+<hr class="new2">
+<section class="products">
+    <div class="product-card">
+        {% for rs in products_latest %}
+        <div class="product-info">
+            <a class="image-boundary" href="{% url 'productDetail' rs.id rs.slug %}"><img src="{{ rs.imageURL }}"></a>
+            <h1>{{ rs.name }}</h1>
+            <p class="price">$ {{rs.price }}</p>
+            <p>{{ rs.label }}</p>
+            <button data-product="{{ rs.id }}" data-action="add" class="button add-btn update-cart">Add to
+                Cart</button>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+<h3 class="title-commercial">COLD EQUIPMENT</h3>
+<hr class="new3">
+<section class="products">
+    <div class="product-card">
+        {% for rs in products_picked %}
+        <div class="product-info">
+            <a class="image-boundary" href="{% url 'productDetail' rs.id rs.slug %}"><img src="{{ rs.imageURL }}"></a>
+            <h1>{{ rs.name }}</h1>
+            <p class="price">$ {{rs.price }}</p>
+            <p>{{ rs.label }}</p>
+            <button data-product="{{ rs.id }}" data-action="add" class="button add-btn update-cart">Add toCart</button>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+<hr class="new3">
+{% endblock %}

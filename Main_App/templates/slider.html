@@ -1,0 +1,35 @@
+{% load static  %}
+<div class="slideshow-container">
+    <link rel="stylesheet" href="{% static 'css/slider.css' %}">
+        <div class="mySlides fade">
+            <div class="numbertext"></div>
+            <!-- {% for p in products_latest %}
+                <img src="{{ p.imageURL }}" style="width:100%; height: 70%;">
+            {% endfor %} -->
+            <img src="{% static 'img/buffet.jpg' %}" style="width:100%; height: 70%;">
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext"></div>
+            <!-- {% for p in products_picked %}
+            <img src="{{ p.imageURL }}" style="width:100%; height: 70%;">
+        {% endfor %} -->
+        <img src="{% static 'img/butable.jpg' %}" style="width:100%; height: 70%;">
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext"></div>
+            <!-- {% for p in products_latest %}
+            <img src="{{ p.imageURL }}" style="width:100%; height: 70%;">
+        {% endfor %} -->
+        <img src="{% static 'img/btable.jpg' %}" style="width:100%; height: 70%;">
+        </div>
+        <div class="categories">
+            
+        </div>
+</div>
+<br>
+
+<div style="text-align:center">
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+</div>

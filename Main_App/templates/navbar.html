@@ -1,0 +1,20 @@
+{% load static %}
+<div class="header">
+  <div class="container-nav">
+    <div class="navbar">
+      <div class="logo">
+        <img src="static/img/mc1.png" width="100px">
+      </div>
+      <nav>
+        <ul>
+          <li><a href="{% url 'home' %}">Home</a></li>
+          <li><a href="{% url 'product' %}">Product</a></li> 
+          <li><a href="{% url 'cart' %}">Cart <i class="fa fa-chevron-circle-down" aria-hidden="true"></i></a>
+          <li><a href="{% url 'about' %}">About Us <i class="fa fa-chevron-circle-down" aria-hidden="true"></i></a>
+          <li><a href="{% url 'contact' %}">Contact Us <i class="fa fa-chevron-circle-down" aria-hidden="true"></i></a>
+          <li><a href="{% url 'checkout' %}">Checkout</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>

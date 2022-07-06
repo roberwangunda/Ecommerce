@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<div class="contact-container">
+  <form action="" method="POST">{% csrf_token %} 
+    <form action = "/cgi-bin/test.cgi" name = "myForm" onsubmit = "return(validate());">
+      <table cellspacing = "2" cellpadding = "2" border = "1">
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+    <label for="country">Country</label>
+  
+    <label for="subject">Subject</label>
+    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+    <input type="submit" value="Submit">
+  </form>
+</div>
+{% endblock %}
+
+

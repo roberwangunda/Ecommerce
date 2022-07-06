@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<section class="products">
+    <div class="product-card">
+        {% for rs in products_picked %}
+        <!-- <div class="product-image">
+                <img src="{{ product.imageURL }}">
+            </div> -->
+        <div class="product-info">
+            <a href="/product/ p.id }}/{{ p.slug }}"><img src="{{ rs.imageURL }}"></a>
+            <li><a href="/category/{{ rs.category.id }}/{{ rs.category.slug }}">{{ rs.category.name }}</a></li>
+            <h1>{{ rs.name }}</h1>
+            <p class="price">$ {{rs.price }}</p>
+            <p>{{ rs.label }}</p>
+            <div class="rating">
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star-half-o" aria-hidden="true"></i>
+
+            </div>
+            <button data-product="{{ rs.id }}" data-action="add" class="button add-btn update-cart">Add to
+                Cart</button>
+            <a class="button-view" href="#">View</a>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+{% endblock %}

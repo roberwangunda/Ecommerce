@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="row-cart">
+	<div class="columns">
+		<div class="box-element-one">
+			<a class="continue-shopping" href="{% url 'product' %}">&#x2190; Continue Shopping</a>
+		</div>
+
+		<table class="table">
+			<tr>
+				<th>
+					<h5>Items: <strong>{{ order.get_cart_items }}</strong></h5>
+				</th>
+				<th>
+					<h5>Total:<strong>{{ order.get_cart_total }}</strong></h5>
+				</th>
+			</tr>
+		</table>
+	</div>
+	<div class="box-element-one">
+		<h2>Shopping Cart</h2>
+		<hr class="new3">
+		<div class="cart-rows">
+			<div style="flex:2"></div>
+			<div style="flex:2"><strong>Item</strong></div>
+			<div style="flex:1"><strong>Price</strong></div>
+			<div style="flex:1"><strong>Quantity</strong></div>
+			<div style="flex:1"><strong>Total</strong></div>
+		</div>
+
+		{% for item in items %}
+		<div class="cart-rows">
+			<div style="flex:2"><img class="row-image" src="{{ item.product.imageURL }}"></div>
+			<div style="flex:2">
+				{{ item.product.name }}
+			</div>
+			<div style="flex:1">
+				Kshs.{{ item.product.price }}
+			</div>
+			<div style="flex:1">
+				<p class="quantity">{{ item.quantity }}</p>
+				<div class="quantity">
+					<img data-product="{{ item.product.id }}" data-action="add"  class="chg-quantity update-cart" src="{% static  'img/up.png' %}">
+
+					<img data-product="{{ item.product.id }}" data-action="remove"  class="chg-quantity update-cart" src="{% static  'img/down.png' %}">
+				</div>
+			</div>
+			<div style="flex:1">Kshs.{{ item.get_total }}</div>
+		</div>
+		{% endfor %}
+	</div>
+	<hr class="new3">
+	<div class="order-summary">
+		<h3>Order Summary</h3>
+		<h5>{{ order.get_cart_items }}</h5>
+		<h5>Total: Kshs.{{ order.get_cart_total }}</h5>
+		<button class="checkout-button"><a class="#" href="{% url 'checkout' %}">Proceed To Checkout</a></button>
+	</div>
+
+</div>
+<br>
+{% endblock %}

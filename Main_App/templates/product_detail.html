@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+{% block description %} {{ product.description|safe }} {% endblock %}
+<!-- {% block keywords %} {{ product.keywords }} {% endblock %} -->
+
+<ul class="breadcrumb">
+    <li><a href="{% url 'product' %}">Product</a></li>
+    <li><a href="/category/{{ product.category.id }}/{{ product.category.slug }}">{{ product.category.name }}</a></li>
+    <li><a href="#">{{ product.name }}</a></li>
+</ul>
+
+<div class="flex-container">
+    <div>
+        <a href=""><img src="{{ product.imageURL }}"></a>
+    </div>
+    <div>
+        <span>New</span>
+        <p><strong>Availability: In Stock</strong></p>
+        <h3 class="product-name">{{product.name }}</h3>
+        <h4 class="product-price">ksh.{{product.price}}</h4>
+        <p>Lorem ipsum dolor sit amet cons</p>
+        <div class="rating">
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star-half-o" aria-hidden="true"></i>
+        </div>
+        <button data-product="{{ p.id }}" data-action="add" class="button add-btn update-cart">Add to Cart</button>
+    </div>
+</div>
+<hr class="new3">
+<div class="order-summary">
+    <h3>Order Summary</h3>
+    <h5>{{ order.get_cart_items }}</h5>
+    <h5>Total: Kshs.{{ order.get_cart_total }}</h5>
+    <button class="checkout-button"><a class="#" href="{% url 'cart' %}">View Cart</a></button>
+</div>
+{% endblock %}
