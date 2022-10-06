@@ -20,14 +20,14 @@ Then install the dependencies:
 
 `pip install -r requirements.txt`
 
-Make migrations by running the command 
+Run migrations by running the command 
 
 `python manage.py migrate`
 
-Create the Admin
+Create the Admin. Open your Django web application, you can visit your admin panel by visiting http://127.0.0.1:8000/admin/
 
 `python manage.py createsuperuser`
 
-Start Django App
+Start Django App, visit http://127.0.0.1:8000/
 
 `python manage.py runserver`
