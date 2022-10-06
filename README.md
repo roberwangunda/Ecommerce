@@ -5,7 +5,7 @@ To get this project up and running locally on your computer follow the following
 Set up a python virtual environment
 Run the following commands 
 
-1. $ pip install -r requirements.txt
-2. $ python manage.py migrate
-3. $ python manage.py createsuperuser
-4. $ python manage.py runserver
+* $ pip install -r requirements.txt
+* $ python manage.py migrate
+* $ python manage.py createsuperuser
+* $ python manage.py runserver
