@@ -26,7 +26,7 @@ Make migrations by running the command
 
 Create the Admin
 
-`python manage.py createsuperuser'
+`python manage.py createsuperuser`
 
 Start Django App
 
