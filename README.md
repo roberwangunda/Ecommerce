@@ -9,14 +9,25 @@ To get this project up and running locally on your computer follow the following
 ## Setup
 The first thing to do is to clone the repository:
 
-$ git clone https://github.com/roberwangunda/Study-portal.git
-$ cd Study-portal
+`$ git clone https://github.com/roberwangunda/Study-portal.git.` <br /> 
+`$ cd Study-portal`
 
-Set up a python virtual environment
+Set up a python virtual environment on windows and activate it  <br /> 
+`python3 -m venv [Virtual Environment Name]` <br /> 
+`.\Scripts\activate`
 
-Run the following commands 
+Then install the dependencies:
 
-* $ pip install -r requirements.txt
-* $ python manage.py migrate
-* $ python manage.py createsuperuser
-* $ python manage.py runserver
+`pip install -r requirements.txt`
+
+Make migrations by running the command 
+
+`python manage.py migrate`
+
+Create the Admin
+
+`python manage.py createsuperuser'
+
+Start Django App
+
+`python manage.py runserver`
